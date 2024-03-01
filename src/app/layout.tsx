@@ -1,7 +1,14 @@
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "@/styles/index.scss";
+import dynamic from 'next/dynamic'
+
+// don't include this component in SSR
+const Header = dynamic(
+  () => import('@/components/layout/Header'),
+  { ssr: false }
+)
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +24,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="light">
       <UserProvider>
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <Header />
+          {children}
+        </body>
       </UserProvider>
     </html>
   );
