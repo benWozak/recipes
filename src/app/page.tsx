@@ -2,7 +2,7 @@
 
 export default async function Home() {
   return (
-    <main className="main">
+    <main className="app-main">
     </main>
   );
 }

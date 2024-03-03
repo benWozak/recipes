@@ -9,6 +9,7 @@ const Header = dynamic(
   () => import('@/components/layout/Header'),
   { ssr: false }
 )
+import Footer from '@/components/layout/Footer';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,8 +28,11 @@ export default function RootLayout({
     <html lang="en" className="light">
       <UserProvider>
         <body className={inter.className}>
-          <Header />
-          {children}
+          <div className="app">
+            <Header />
+            {children}
+            <Footer />
+          </div>
         </body>
       </UserProvider>
     </html>

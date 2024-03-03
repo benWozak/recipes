@@ -1,11 +1,12 @@
 'use client'
 import * as React from 'react';
 import { useUser } from '@auth0/nextjs-auth0/client';
+import Link from 'next/link';
+import Image from 'next/image';
 
 import { ThemeToggle } from './ThemeToggle';
 
-import { IoPersonCircleOutline } from "react-icons/io5";
-import { IoPowerSharp } from "react-icons/io5";
+import { FaPowerOff } from "react-icons/fa";
 
 export interface IAppProps {
 }
@@ -14,10 +15,17 @@ export default function Header() {
   const { user } = useUser();
 
     return (
-      <header className="header-container">
-        <a href="/profile">Profile <IoPersonCircleOutline /></a>
-        <ThemeToggle />
-        {user ? <a href="/api/auth/logout">Logout <IoPowerSharp /></a> : <a href="/api/auth/login">Login <IoPowerSharp /></a>}
+      <header className="app-header">
+        <Link href='/' className='app-logo'>
+          <Image height={24} width={24} src='/icons-48.png' alt='recipe icon'/> myRecipes
+        </Link>
+        <div></div>
+        <div></div>
+        <div className="nav-container">
+          <ThemeToggle />
+          Theme
+        </div>
+        <Link className="nav-container" href={`/api/auth/${user ? 'logout' : 'login'}`}> <FaPowerOff /> {user ? 'Logout' : 'Login'}</Link>
       </header>
     );
 }
