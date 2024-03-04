@@ -1,6 +1,6 @@
 .app {
   box-sizing: border-box;
-  min-height: 100%;
+  height: 98%;
   display: flex;
   flex-direction: column;
 
@@ -31,10 +31,12 @@
   &-main {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     flex-grow: 1;
     max-width: var(--max-width);
+    max-height: 98%;
+    overflow-y: scroll;
   }
 
   &-logo {

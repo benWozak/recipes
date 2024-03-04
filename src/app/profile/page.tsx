@@ -6,13 +6,13 @@ export default async function Profile() {
 
   return (
     session?.user && (
-          <div className="app-main">
+          <main className="app-main">
             <img src={session?.user.picture} alt={session?.user.name} />
             <h2>{session?.user.name}</h2>
             <p>{session?.user.email}</p>
             <br />
             <Link href="/">Home</Link>
-          </div>
+          </main>
       )
   );
 }
