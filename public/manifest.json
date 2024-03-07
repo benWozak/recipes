@@ -1,7 +1,7 @@
 {
   "name": "recipes",
   "short_name": "RSP",
-  "theme_color": "#00ff00",
+  "theme_color": "#004242",
   "background_color": "#ffffff",
   "display": "fullscreen",
   "orientation": "any",

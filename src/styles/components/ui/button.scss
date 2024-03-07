@@ -1,0 +1,52 @@
+$black: #0f172a;
+$white: #FFF;
+
+@mixin borderHoverTrans {
+  &:hover {
+    border: 1px solid transparent;
+  }
+}
+
+@mixin hoverFill ( $color ) {
+  &:hover {
+    background-color: $color;
+    border: 1px solid $color;
+    color: $white;
+  }
+}
+
+@mixin lightHoverFill ( $color ) {
+  &:hover {
+    background-color: $white;
+    color: $color;
+  }
+}
+
+@mixin buttonInfo {
+  display: inline-block;
+  background-color: transparent;
+  padding: .8rem 1.2rem;
+  font-size: px(16);
+  text-align: center;
+  cursor: pointer;
+  transition: .27s;
+}
+
+@mixin button( $color ) {
+  border: 1px solid $color;
+  color: $color;
+  @include buttonInfo();
+  @include borderHoverTrans();
+  @include hoverFill( $color )
+}
+
+@mixin buttonLight( $color ) {
+  border: 1px solid $white;
+  color: $white;
+  @include buttonInfo();
+  @include lightHoverFill( $color )
+}
+
+.button {
+  @include button( $black );
+}

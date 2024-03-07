@@ -5,7 +5,7 @@ const loadedRecipe = undefined;
 export default async function Home() {
   return (
     <main className="app-main">
-      {loadedRecipe ? <RecipeDisplay /> : <RecipeSearch />}
+      {loadedRecipe ? <RecipeDisplay recipe={loadedRecipe} /> : <RecipeSearch results={loadedRecipe} />}
     </main>
   );
 }

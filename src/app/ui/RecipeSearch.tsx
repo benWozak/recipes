@@ -1,9 +1,12 @@
 'use client'
 import * as React from 'react';
-import axios from 'axios'
-import { parseRecipeData } from '../actions'
+import { parseRecipeData } from '../actions';
+import AddToHomeScreen from "@/components/AddToHomeScreen/AddToHomeScreen";
+
 
 export interface IAppProps {
+  results: any
+  onSearchResponse?: () => void
 }
 
 export function RecipeSearch (props: IAppProps) {
@@ -26,6 +29,7 @@ export function RecipeSearch (props: IAppProps) {
       <button onClick={handleParseURLData}>
         Get Recipe
       </button>
+      <AddToHomeScreen />
     </div>
   );
 }
