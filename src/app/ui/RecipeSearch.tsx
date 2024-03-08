@@ -26,7 +26,7 @@ export function RecipeSearch (props: IAppProps) {
     <div className='recipe-search'>
       <h2 className="headline-2">Enter Recipe URL here</h2>
       <input className='recipe-search-input' type="search" placeholder="Enter a Recipe URL" onChange={handleURLChange} value={value} />
-      <button onClick={handleParseURLData}>
+      <button className='button' onClick={handleParseURLData}>
         Get Recipe
       </button>
       <AddToHomeScreen />
