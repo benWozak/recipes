@@ -28,16 +28,14 @@ export default function AddToHomeScreen() {
   };
 
   const doNotShowAgain = () => {
-    // Create date 1 year from now
     const date = new Date();
     date.setFullYear(date.getFullYear() + 1);
-    // setCookie(COOKIE_NAME, "dontShow", { expires: date }); // Set cookie for a year
+    setCookie(COOKIE_NAME, "dontShow", { expires: date }); // Set cookie for a year
     setDisplayPrompt("");
   };
 
   useEffect(() => {
     const addToHomeScreenPromptCookie = getCookie(COOKIE_NAME);
-
     if (addToHomeScreenPromptCookie !== "dontShow") {
       // Only show prompt if user is on mobile and app is not installed
       if (isMobile && !isStandalone) {
@@ -89,7 +87,7 @@ export default function AddToHomeScreen() {
                 <button className="prompt-close" onClick={closePrompt}>
                   <FaTimes />
                 </button>
-                <p className="headline-5">For the best experience, we recommend installing the this app to your home screen!</p>
+                <p className="headline-5 pad-small-top">For the best experience, we recommend installing the this app to your home screen!</p>
                 <Prompt />
                 <button className="button" onClick={doNotShowAgain}>
                   Don&apos;t show again

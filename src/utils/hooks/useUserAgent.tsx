@@ -22,6 +22,8 @@ export default function useUserAgent() {
       setUserAgentString(userAgentString);
       let userAgent;
 
+      console.log(userAgentString)
+
       /**
        * Parse user agent string to determine browser
        * The order of the if statements is important because some browsers
