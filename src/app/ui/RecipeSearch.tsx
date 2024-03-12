@@ -18,7 +18,6 @@ export function RecipeSearch (props: IAppProps) {
 
   async function handleParseURLData() {
     const response = await parseRecipeData(value)
-
     console.log(response)
   }
 
